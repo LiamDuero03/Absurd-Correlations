@@ -1,135 +1,106 @@
-# 🌀 What Really Moves the Market? Absurd Correlations with the S&P 500
+# 🌀 What Really Moves the Market? Absurd Correlations with the S&P 500  
 
-**An interactive dashboard that compares the S&P 500 stock market performance with completely unrelated cultural, environmental, and cosmic trends.**  
+**A humorous data storytelling project comparing the S&P 500 stock market performance with completely unrelated cultural, sporting, and environmental trends.**  
 
-Because sometimes, the market moves for *mysterious* reasons… or maybe it’s just Beyoncé’s fault.  
-
----
-
-## 🎯 Project Concept
-
-This project explores **absurd correlations** between the stock market and random trends.  
-Users can pick a signal from a dropdown and see how it “aligns” with the S&P 500 timeline.
-
-Possible signals include:  
-
-- 🎵 **Spotify Music Trends** – Are stocks more bullish when songs are more danceable or energetic?  
-- 🏎 **Formula 1 World Champions** – Does the reigning F1 champion’s era impact stock performance?  
-- ☀️ **Global Weather Trends** – Do rising global temperatures coincide with market growth or decline?  
-- 🌓 **Moon Phases & Astronauts** – Are markets calmer during full moons or when more people are in space?  
-
-This is a **fun, tongue-in-cheek data storytelling project** combining finance with pop culture, science, and randomness.
+Because sometimes, the market moves for *mysterious* reasons… or maybe it’s just danceability and football points.  
 
 ---
 
-## 📊 Planned Features
+## 🎯 Project Concept  
 
-✅ **Dual-axis time series charts**  
-Compare S&P 500 vs chosen signal  
+This project explores **absurd correlations** between the stock market and random external factors.  
 
-✅ **Correlation indicator**  
-Show a (mostly meaningless) correlation coefficient  
+Instead of trying to predict the S&P 500 with economic fundamentals, I deliberately compared it to metrics like:  
 
-✅ **Funny insights**  
-Auto-generated commentary, e.g.  
-> *“In years when Hamilton dominated F1, the S&P 500 was unstoppable. Coincidence?”*  
+- 🎵 **Spotify Music Trends** – Average *danceability* of the year’s most popular songs  
+- 🏎 **Formula 1 Champion Points** – How dominant the F1 World Champion was in that year  
+- 🌡 **Global Temperature Anomalies** – Did the market rise along with the planet’s heat?  
+- ⚽ **Premier League Champion Points** – Do record-breaking EPL seasons “coincide” with stock market gains?  
 
-✅ **Interactive dropdown**  
-Switch between Spotify, F1, Weather, and Moon/Space data  
-
-✅ **Fully hosted online**  
-Accessible via Streamlit Cloud  
+Finally, I trained a **Linear Regression model** to see if these absurd metrics could “predict” the S&P 500.  
 
 ---
 
-## 🗂 Data Sources & APIs
+## 📊 What I Actually Did  
 
-| Signal | Dataset/API | Notes |
-|--------|-------------|-------|
-| **S&P 500** | [Yahoo Finance API](https://pypi.org/project/yfinance/) | Historical stock prices & returns |
-| **Spotify Trends** | [Spotify Web API](https://developer.spotify.com/documentation/web-api/) | Avg danceability, energy, tempo of Top 50 songs per year |
-| **F1 Champions** | [Ergast F1 API](https://ergast.com/mrd/) | Yearly F1 world champions since 2000 |
-| **Global Weather** | [NASA GISTEMP](https://data.giss.nasa.gov/gistemp/) | Global temperature anomaly data |
-| **People in Space** | [Open Notify API](http://api.open-notify.org/astros.json) | Number of humans in space over time |
-| **Moon Phases** | [Astral Python Library](https://pypi.org/project/astral/) | Calculate moon phases for given dates |
-
----
-
-## 🛠 Tech Stack
-
-- **Python** (Pandas, NumPy) → data wrangling  
-- **Plotly** → dual-axis time series charts  
-- **Streamlit** → lightweight interactive dashboard  
-- **APIs** → Spotify, Ergast F1, Open Notify, Yahoo Finance  
-- **Hosting** → [Streamlit Cloud](https://streamlit.io/cloud) (free)  
+✅ Collected **S&P 500 yearly average close (2010–2019)** via Yahoo Finance  
+✅ Fetched **Spotify Top Songs data** from Kaggle (danceability, energy, tempo)  
+✅ Used **historical F1 World Champion points** from Wikipedia  
+✅ Added **global temperature anomaly data** from NASA  
+✅ Scraped **Premier League Champion Points** from publicly available data  
+✅ Combined all into a single dataset  
+✅ Visualized all trends together in a **Plotly multi-series chart**  
+✅ Ran a **Linear Regression** on absurd factors → achieved **MAE ~27.6** (totally meaningless!)  
 
 ---
 
-## 📌 Roadmap
+## 🖼 Key Visualization  
 
-### Phase 1 – Core Setup
-- [ ] Fetch **S&P 500** historical data with `yfinance`
-- [ ] Build a simple dual-axis chart in Plotly  
-- [ ] Create minimal Streamlit app  
+![Absurd Correlations](screenshots/SP500-all.png)  
 
-### Phase 2 – Spotify vs S&P 500
-- [ ] Fetch yearly Top 50 Spotify tracks  
-- [ ] Calculate average **danceability/energy/tempo**  
-- [ ] Compare with S&P 500 annual returns  
-- [ ] Add funny correlation insights  
-
-### Phase 3 – Add F1 Champions
-- [ ] Fetch F1 champions from Ergast API  
-- [ ] Categorize S&P performance by **champion era**  
-- [ ] Add toggle for Spotify ↔ F1  
-
-### Phase 4 – Add Weather & Moon/Space
-- [ ] Pull NASA climate anomaly data  
-- [ ] Integrate Open Notify astronauts-in-space API  
-- [ ] Add moon phase calculations  
-
-### Phase 5 – Polish & Deploy
-- [ ] Clean UI & styling  
-- [ ] Add funny random quotes for each signal  
-- [ ] Deploy to Streamlit Cloud  
-- [ ] Write short blog post about the project  
+This combined Plotly chart shows how *completely unrelated* trends loosely follow the same timeline as the S&P 500. It’s a playful way to show how you can always “find” a correlation.  
 
 ---
 
-## 🖼 Example User Flow
+## 🔮 Fun Machine Learning Result  
 
-1. **Landing Page** → *“Does music, F1, or the moon really move the market?”*  
-2. **Dropdown Selection** → User picks **Spotify Music Trends**  
-3. **Chart View** → Dual-axis: S&P 500 vs Avg Danceability  
-4. **Correlation Box** → *“Correlation: +0.37 (completely meaningless)”*  
-5. **Funny Insight** → *“In 2017, music got more upbeat… and so did the market!”*  
-6. **Try Another Signal** → User switches to **Moon Phases**  
+I trained a **Linear Regression model** with these random features:  
 
----
+- Danceability  
+- F1 Champion Points  
+- Global Temp Anomaly  
+- Premier League Champion Points  
 
-## 🤔 Why This Project?
+Surprisingly, it achieved **Mean Absolute Error: 27.6 points** for a 10-year dataset.  
+But the “feature importance” was pure nonsense:  
 
-- **Shows API integration skills** (Spotify, Yahoo Finance, etc.)  
-- **Combines finance with culture/science for a unique twist**  
-- **Storytelling + humor makes it memorable for a portfolio**  
-- **Fully interactive & shareable online**  
+- 🌡 **Temp Anomaly:** +2191.56 (apparently the “strongest predictor”)  
+- ⚽ **Premier League Points:** +39.08  
+- 🎵 **Spotify Danceability:** +20.65  
+- 🏎 **F1 Champion Points:** +4.00  
 
----
-
-## 🚀 Planned Output
-
-- **Live Dashboard:** hosted on Streamlit Cloud  
-- **GitHub Repo:** with code, data fetching scripts, and README  
-- **Blog/Portfolio Link:** explaining the funniest “correlations”  
+Moral of the story: **ML will find *some* relationship even in meaningless data.**  
 
 ---
 
-## 💡 Next Steps
+## 🗂 Data Sources  
 
-- [ ] Implement Phase 1 (basic S&P vs Spotify dual-axis chart)  
-- [ ] Expand signals and build dropdown selector  
-- [ ] Add fun commentary & deploy  
+| Signal | Dataset | Notes |  
+|--------|---------|-------|  
+| **S&P 500** | [Yahoo Finance API](https://pypi.org/project/yfinance/) | Yearly average close (2010–2019) |  
+| **Spotify Trends** | [Kaggle Top Spotify Songs](https://www.kaggle.com/datasets/leonardopena/top-spotify-songs-from-20102019-by-year) | Avg danceability per year |  
+| **F1 Champions** | Wikipedia (scraped manually) | Champion points per season |  
+| **Global Weather** | [NASA GISTEMP](https://data.giss.nasa.gov/gistemp/) | Global temperature anomaly |  
+| **Premier League** | Wikipedia (scraped manually) | Champion’s points per season |  
 
 ---
 
-*Because sometimes, the stock market doesn’t care about fundamentals… it cares about danceability, moon phases, and Lewis Hamilton.*  
+## 🛠 Tech Stack  
+
+- **Python** → data wrangling with Pandas  
+- **Plotly** → visualization  
+- **scikit-learn** → Linear Regression model  
+- **yfinance & Kaggle Datasets** → data collection  
+
+---
+
+## 🤔 Why This Project?  
+
+- **Showcases data storytelling** with humor  
+- **Highlights the danger of spurious correlations**  
+- Demonstrates **data wrangling, visualization, and simple ML**  
+- Adds a *memorable* portfolio piece that mixes **finance, culture, and sports**  
+
+---
+
+## 🚀 Output  
+
+- ✅ **Multi-series visualization** of absurd correlations  
+- ✅ **Simple ML model** proving you can fit nonsense to the stock market  
+- ✅ **Screenshots + write-up** for portfolio  
+
+---
+
+## 💡 Key Takeaway  
+
+*Correlation does not imply causation—especially when it involves danceability, football points, and the S&P 500!*  
